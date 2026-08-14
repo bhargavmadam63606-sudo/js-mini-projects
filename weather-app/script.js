@@ -1,10 +1,11 @@
 function getWeather() {
     let city = document.getElementById('cityInput').value;
     let errorEl = document.getElementById('error');
+    let resultBox = document.getElementById('weatherResult');
     
     if(city === "") {
         errorEl.innerText = "Please enter a city name";
-        document.getElementById('weatherResult').classList.add('hidden');
+        resultBox.classList.add('hidden');
         return;
     }
     
@@ -12,7 +13,7 @@ function getWeather() {
     document.getElementById('cityName').innerText = city;
     document.getElementById('temp').innerText = "28°C";
     document.getElementById('desc').innerText = "Sunny ☀️";
-    document.getElementById('weatherResult').classList.remove('hidden');
+    resultBox.classList.remove('hidden');
 }
 
 document.getElementById('cityInput').addEventListener('keypress', function(e) {
